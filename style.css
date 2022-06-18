@@ -1,0 +1,23 @@
+body {
+    background: cover;
+}
+
+.heading {
+    font-size: 35px;
+    color: rgb(0, 122, 79);
+    width: 100%;
+    margin: 0px;
+    font-family: fantasy;
+}
+
+.note {
+    font-size: 18px;
+    color: rgb(40, 17, 139);
+    font-family:cursive;
+}
+
+#song_name {
+    font-size:22px;
+    color:crimson;
+    font-family: fantasy;
+}
