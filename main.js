@@ -4,6 +4,8 @@ leftWristX = 0;
 rightWristX = 0;
 leftWristY = 0;
 rightWristY = 0;
+score_leftWrist = 0;
+song_status = "";
 
 
 
@@ -28,6 +30,10 @@ function gotPoses(results) {
     if (results.length > 0) {
         console.log(results);
 
+        score_leftWrist = results[0].pose.keypoints[9].score;
+        console.log("Score Left Wrist = " + score_leftWrist);
+
+
         leftWristX = results[0].pose.leftWrist.x;
         leftWristY = results[0].pose.leftWrist.y;
         console.log("Left Wrist X =" + leftWristX + "Left Wrist Y = " + leftWristY);
@@ -47,4 +53,14 @@ function modelLoaded() {
 
 function draw() {
     image(video, 0, 0, 600, 500);
+
+    fill('#0E7C1E');
+    stroke('black');
+
+    if (score_leftWrist > 0.2) {
+
+        circle(leftWristX - 20, leftWristY, 25);
+        song.play(song1);
+
+    }
 }
